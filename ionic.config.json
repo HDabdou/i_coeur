@@ -1,0 +1,7 @@
+{
+  "name": "airtime",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

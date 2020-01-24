@@ -1,0 +1,127 @@
+<!--<ion-content>
+  <ion-card class="welcome-card">
+
+    <ion-card-content>
+     
+      <div style="text-align: center !important;margin-top: 1rem;">
+        <ion-button (click)="inscription()" color="success">Inscription</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>-->
+<ion-content class="center-vertical" style="height: 100%;">
+  <!--<div>
+      <div class="row" style="text-align: center">
+          <div class="col col-2 col-offset-15" style="border-bottom: 1px solid black">
+              {{passcode.substring(0, 1)}}
+          </div>
+          <div class="col col-2 col-offset-10" style="border-bottom: 1px solid black">
+              {{passcode.substring(1, 2)}}
+          </div>
+          <div class="col col-2 col-offset-10" style="border-bottom: 1px solid black">
+              {{passcode.substring(2, 3)}}
+          </div>
+          <div class="col col-2 col-offset-10" style="border-bottom: 1px solid black">
+              {{passcode.substring(3, 4)}}
+          </div>
+      </div>
+  </div>-->
+  <ion-card class="welcome-card" style="padding: 0;margin: 0;height: 100%;">
+    <img src="/assets/logo1.png" style="max-height:120px ;" alt=""/>
+    <ion-card-header>
+      <ion-card-title style="text-align: center !important;">
+        <div style="text-align: center;margin-top: -1rem;"><span style="font-size: 14px;">Entrez votre code pin</span></div>
+        <ion-grid >
+          <ion-row>
+            <ion-col style="border-bottom: 1px solid black;margin: 1.2rem;text-align: center;-webkit-text-security: disc !important;font-size: 20px;">{{passcode.substring(0, 1)}}</ion-col>
+            <ion-col style="border-bottom: 1px solid black;margin: 1.2rem;text-align: center;-webkit-text-security: disc !important;font-size: 20px;">{{passcode.substring(1, 2)}}</ion-col>
+            <ion-col style="border-bottom: 1px solid black;margin: 1.2rem;text-align: center;-webkit-text-security: disc !important;font-size: 20px;">{{passcode.substring(2, 3)}}</ion-col>
+            <ion-col style="border-bottom: 1px solid black;margin: 1.2rem;text-align: center;-webkit-text-security: disc !important;font-size: 20px;">{{passcode.substring(3, 4)}}</ion-col>
+           </ion-row>
+          <ion-row>
+            <ion-col>
+              <div style="text-align: center;"><span style="font-size: 14px;"> encore incrit <a (click)="inscription()"><b> Créer un compte</b></a></span></div>
+            </ion-col>
+          </ion-row>
+            <ion-row>
+            <ion-col>
+              <div style="text-align: center;"><span style="font-size: 14px;">code pin oublié <a (click)="inscription()"><b>Cliquer ici</b></a></span></div>
+            </ion-col>
+          </ion-row>
+
+           
+         </ion-grid>
+         <!--<div style="width: 100%;text-align: center;"><ion-spinner name="dots"></ion-spinner></div>-->
+        
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      
+    </ion-card-content>
+  </ion-card>
+  <ion-grid style="bottom: 35px;position: absolute;width: 100%;height: 35%;">
+    <ion-row>
+      <ion-col >
+        <button  class="button button-light button-stretch clavierPin" (click)="add(1)">1</button>
+
+      </ion-col> 
+      <ion-col >
+        <button  class="button button-light button-stretch clavierPin" (click)="add(2)">2</button>
+
+      </ion-col> 
+      <ion-col >
+        <button  class="button button-light button-stretch clavierPin" (click)="add(3)">3</button>
+
+      </ion-col>
+      
+      </ion-row>
+      <ion-row>
+        <ion-col >
+          <button  class="button button-light button-stretch clavierPin" (click)="add(4)">4</button>
+
+        </ion-col> 
+        <ion-col >
+          <button  class="button button-light button-stretch clavierPin" (click)="add(5)">5</button>
+
+        </ion-col> 
+        <ion-col >
+          <button  class="button button-light button-stretch clavierPin" (click)="add(6)">6</button>
+
+        </ion-col>
+        
+        </ion-row>
+        <ion-row>
+        <ion-col >
+          <button  class="button button-light button-stretch clavierPin" (click)="add(7)">7</button>
+
+        </ion-col> 
+        <ion-col >
+          <button  class="button button-light button-stretch clavierPin" (click)="add(8)">8</button>
+
+        </ion-col> 
+        <ion-col >
+          <button  class="button button-light button-stretch clavierPin" (click)="add(9)">9</button>
+
+        </ion-col>
+        
+        </ion-row>
+        <ion-row>
+        <ion-col >
+          <button  class="button button-light button-stretch clavierPin" (click)="init()"><ion-icon name="refresh"></ion-icon></button>
+
+        </ion-col> 
+        <ion-col >
+          <button  class="button button-light button-stretch clavierPin" (click)="add(0)">0</button>
+
+        </ion-col> 
+        <ion-col >
+          <button  class="button button-light button-stretch clavierPin" (click)="delete()"><ion-icon name="backspace"></ion-icon></button>
+
+        </ion-col>
+        
+        </ion-row>
+   </ion-grid>
+  
+ 
+</ion-content>

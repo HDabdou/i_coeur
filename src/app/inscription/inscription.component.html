@@ -1,0 +1,585 @@
+
+<!--  <ion-card class="welcome-card" style="max-height:250px ;">
+    <img src="/assets/orange1.png"  alt=""/>
+    
+  </ion-card>
+  <ion-card class="welcome-card" >
+    <img src="/assets/free.png" style="max-height:200px ;" alt=""/>
+   
+  </ion-card>
+  <ion-card class="welcome-card">
+    <img src="/assets/expresso.jpg" style="max-height:200px ;" alt=""/>
+    
+  </ion-card>-->
+<ion-content>
+  <ion-card *ngIf="etatpeInscription == 1" class="welcome-card" style="padding: 0 !important;margin: 0 !important;">
+    <ion-card-header>
+      <ion-card-title style="text-align: center !important;">Nouvelle souscription</ion-card-title>
+    </ion-card-header>
+    <ion-card-content style="margin-bottom: 4rem;">
+      <ion-grid>
+        <ion-row>
+          <ion-col style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-item >
+            <ion-input  [(ngModel)]="numero" [ngModelOptions]="{standalone: true}" placeholder="Nom"></ion-input>
+          </ion-item>
+        </ion-col>
+          <ion-col style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-item >
+            <ion-input  [(ngModel)]="montant" [ngModelOptions]="{standalone: true}" placeholder="Prénom"></ion-input>
+          </ion-item>
+        </ion-col>
+        </ion-row>
+
+        <ion-row style="border: 2px solid #2c5aa3;margin: 5px;">
+          <ion-col >
+          <ion-item >
+            <ion-label>Sexe</ion-label>
+            <ion-select placeholder="Selectionnez un">
+              <ion-select-option value="f">F</ion-select-option>
+              <ion-select-option value="m">M</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        </ion-row>
+
+        <ion-row style="border: 2px solid #2c5aa3;margin: 5px;">
+          
+          <ion-col>
+          <ion-item >
+            <ion-label>Date de naissance</ion-label>
+            <ion-datetime displayFormat="DD MM YYYY" placeholder="j-m-a"></ion-datetime>
+          </ion-item>
+          </ion-col>
+         
+        </ion-row>
+        <ion-row style="border: 2px solid #2c5aa3;margin: 5px;">
+         
+          <ion-col>
+          <ion-item style="text-align: center !important;">
+            <label>Age : <span class="badge">40</span> ans</label>
+          </ion-item>
+        </ion-col>
+        </ion-row>
+        <ion-row style="border: 2px solid darkblue;margin: 5px;">
+         
+          <ion-col>
+          <ion-item >
+            <ion-label>Origine</ion-label>
+            <ion-select placeholder="Selectionnez un">
+              <ion-select-option value="f">Sénégal</ion-select-option>
+              <ion-select-option value="m">Mali</ion-select-option>
+              <ion-select-option value="f">Cote d\'ivoire</ion-select-option>
+              <ion-select-option value="m">Togo</ion-select-option>
+              <ion-select-option value="f">Benin</ion-select-option>
+            </ion-select>         
+         </ion-item>
+        </ion-col>
+        </ion-row>
+        <ion-row style="border: 2px solid #2c5aa3;margin: 5px;">
+         
+          <ion-col>
+          <ion-item >
+            <ion-input  [(ngModel)]="numero" [ngModelOptions]="{standalone: true}" placeholder="Lieu de résidence"></ion-input>
+         </ion-item>
+        </ion-col>
+        </ion-row>
+        
+        <ion-row>
+          <ion-col style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-item >
+            <ion-input  [(ngModel)]="numero" [ngModelOptions]="{standalone: true}" placeholder="Téléphone1"></ion-input>
+          </ion-item>
+        </ion-col>
+          <ion-col style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-item >
+            <ion-input  [(ngModel)]="montant" [ngModelOptions]="{standalone: true}" placeholder="Téléphone2"></ion-input>
+          </ion-item>
+        </ion-col>
+        </ion-row>
+
+        
+        <ion-row>
+          <ion-col style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-item >
+            <ion-input  [(ngModel)]="numero" [ngModelOptions]="{standalone: true}" placeholder="Profession"></ion-input>
+          </ion-item>
+        </ion-col>
+          <ion-col style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-item >
+            <ion-input  [(ngModel)]="montant" [ngModelOptions]="{standalone: true}" placeholder="Lieu exercice"></ion-input>
+          </ion-item>
+        </ion-col>
+        </ion-row>
+        
+        <ion-row style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-col >
+          <ion-item >
+            <ion-label>Eléve ou etudiant </ion-label>
+          </ion-item>
+        </ion-col>
+          <ion-col style="margin: 0;padding: 0;">
+          <ion-item  >
+            <form>
+              <label (click)="checkEtude('oui')" style="margin-left: 5px !important;" class="radio-inline">
+                <input type="radio"   value="oui" name="optradio" >OUI
+              </label>
+              <label (click)="checkEtude('oui')" style="margin-left: 5px !important;" class="radio-inline">
+                <input type="radio"   value="non" name="optradio">NON
+              </label>
+            </form>    
+          </ion-item>
+        </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="etudiantOReleve == true">
+          <ion-col style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-item >
+            <ion-input [(ngModel)]="montant" [ngModelOptions]="{standalone: true}" placeholder="Si oui précisz étude et type"></ion-input>
+          </ion-item>
+        </ion-col>
+         
+        </ion-row>
+
+        
+        <ion-row>
+          <ion-col style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-item >
+            <ion-input  [(ngModel)]="numero" [ngModelOptions]="{standalone: true}" placeholder="Cardiologue"></ion-input>
+          </ion-item>
+        </ion-col>
+          <ion-col style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-item >
+            <ion-input  [(ngModel)]="montant" [ngModelOptions]="{standalone: true}" placeholder="Lieu exercice"></ion-input>
+          </ion-item>
+        </ion-col>
+        </ion-row>
+
+        
+        <ion-row>
+          <ion-col style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-item >
+            <ion-input  [(ngModel)]="numero" [ngModelOptions]="{standalone: true}" placeholder="Accompagnant"></ion-input>
+          </ion-item>
+        </ion-col>
+         
+        </ion-row>
+
+        
+        <ion-row>
+          <ion-col style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-item >
+            <ion-input  [(ngModel)]="numero" [ngModelOptions]="{standalone: true}" placeholder="Téléphone1 Accompagnant"></ion-input>
+          </ion-item>
+        </ion-col>
+          <ion-col style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-item >
+            <ion-input  [(ngModel)]="montant" [ngModelOptions]="{standalone: true}" placeholder="Téléphone2 Accompagnant"></ion-input>
+          </ion-item>
+        </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="etatpeInscription == 2" class="welcome-card" style="padding: 0 !important;margin: 0 !important;">
+    <ion-card-header>
+      <ion-card-title style="text-align: center !important;">Nouvelle souscription suit</ion-card-title>
+    </ion-card-header>
+    <ion-card-content style="margin-bottom: 4rem;">
+      <ion-grid>
+        <ion-row style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-row>
+         <ion-item >
+            <label for="">Type de maladie</label>           
+        </ion-item>
+      </ion-row>
+        <ion-row>
+         <ion-col >
+            <ion-item >
+              <ion-label>IM</ion-label>
+              <ion-select placeholder="Selectionnez un">
+                <ion-select-option value="f">Sénégal</ion-select-option>
+                <ion-select-option value="m">Mali</ion-select-option>
+                <ion-select-option value="f">Cote d\'ivoire</ion-select-option>
+                <ion-select-option value="m">Togo</ion-select-option>
+                <ion-select-option value="f">Benin</ion-select-option>
+              </ion-select>            
+             </ion-item>
+          </ion-col>
+            
+          <ion-col >
+            <ion-item >
+              <ion-label>RM</ion-label>
+              <ion-select placeholder="Selectionnez un">
+                <ion-select-option value="f">Sénégal</ion-select-option>
+                <ion-select-option value="m">Mali</ion-select-option>
+                <ion-select-option value="f">Cote d\'ivoire</ion-select-option>
+                <ion-select-option value="m">Togo</ion-select-option>
+                <ion-select-option value="f">Benin</ion-select-option>
+              </ion-select>  
+            </ion-item>
+          </ion-col>
+            
+          <ion-col >
+              <ion-item >
+                <ion-label>IA</ion-label>
+                <ion-select placeholder="Selectionnez un">
+                  <ion-select-option value="f">Sénégal</ion-select-option>
+                  <ion-select-option value="m">Mali</ion-select-option>
+                  <ion-select-option value="f">Cote d\'ivoire</ion-select-option>
+                  <ion-select-option value="m">Togo</ion-select-option>
+                  <ion-select-option value="f">Benin</ion-select-option>
+                </ion-select>  
+              </ion-item>
+          </ion-col>
+          
+          <ion-col >
+              <ion-item >
+                <ion-label>RA</ion-label>
+                <ion-select placeholder="Selectionnez un">
+                  <ion-select-option value="f">Sénégal</ion-select-option>
+                  <ion-select-option value="m">Mali</ion-select-option>
+                  <ion-select-option value="f">Cote d\'ivoire</ion-select-option>
+                  <ion-select-option value="m">Togo</ion-select-option>
+                  <ion-select-option value="f">Benin</ion-select-option>
+                </ion-select>  
+              </ion-item>
+          </ion-col>
+
+          
+          <ion-col >
+            <ion-item >
+              <ion-label>IT</ion-label>
+              <ion-select placeholder="Selectionnez un">
+                <ion-select-option value="f">Sénégal</ion-select-option>
+                <ion-select-option value="m">Mali</ion-select-option>
+                <ion-select-option value="f">Cote d\'ivoire</ion-select-option>
+                <ion-select-option value="m">Togo</ion-select-option>
+                <ion-select-option value="f">Benin</ion-select-option>
+              </ion-select>  
+            </ion-item>
+          </ion-col>
+          <ion-row>
+            <ion-col >
+              <ion-item >
+                <ion-label>Autre</ion-label>
+                <ion-input  [(ngModel)]="montant" [ngModelOptions]="{standalone: true}" placeholder="Saisissez la maladie"></ion-input>
+
+              </ion-item>
+           </ion-col>
+         </ion-row>
+        </ion-row>
+       </ion-row>
+      <ion-row style="border: 2px solid #2c5aa3;margin: 5px;">
+
+        <ion-col>
+          <ion-item >
+            <ion-label>Année de decouverte de la maladie</ion-label>
+          </ion-item>
+          <ion-item >
+            <ion-datetime displayFormat="YYYY" placeholder="annee"></ion-datetime>        
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+        <ion-row style="border: 2px solid #2c5aa3;margin: 5px;">
+          <ion-col >
+            <ion-item >
+              <ion-label>Medecin référent</ion-label>
+              <ion-input  [(ngModel)]="montant" [ngModelOptions]="{standalone: true}" placeholder="Nom du medecin"></ion-input>
+  
+            </ion-item>
+            <ion-item >
+              <ion-label>Structure référente</ion-label>
+              <ion-input  [(ngModel)]="montant" [ngModelOptions]="{standalone: true}" placeholder="Nom de le structure"></ion-input>
+  
+            </ion-item>
+        </ion-col>
+        </ion-row>
+
+        <ion-row style="border: 2px solid #2c5aa3;margin: 5px;">
+          
+          <ion-col>
+            <ion-item >
+              <ion-label>debut suivi CTCV Fann</ion-label>
+            </ion-item>
+            <ion-item >
+              <ion-label>Mois</ion-label>
+              <ion-datetime displayFormat="MM" placeholder="mois"></ion-datetime>
+            </ion-item>
+            <ion-item >
+              <ion-label>Année</ion-label>
+              <ion-datetime displayFormat="YYYY" placeholder="année"></ion-datetime>
+            </ion-item>
+          </ion-col>
+         
+        </ion-row>
+        
+        <ion-row style="border: 2px solid #2c5aa3;margin: 5px;">
+          
+          <ion-col>
+            <ion-item >
+              <ion-label>Delai sur liste d'attente</ion-label>
+            </ion-item>
+            <ion-item >
+              <ion-label>Année</ion-label>
+              <ion-datetime displayFormat="YYYY" placeholder="année"></ion-datetime>
+            </ion-item>
+            <ion-item >
+              <ion-label>Mois</ion-label>
+              <ion-datetime displayFormat="MM" placeholder="mois"></ion-datetime>
+            </ion-item>
+          </ion-col>
+         
+        </ion-row>
+        <ion-row style="border: 2px solid #2c5aa3;margin: 5px;">
+          
+          <ion-col>
+            <ion-item >
+              <ion-label>Date opération</ion-label>
+              <ion-datetime displayFormat="DD MM YYYY" placeholder="date"></ion-datetime>
+
+            </ion-item>
+            
+          </ion-col>
+         
+        </ion-row>
+      
+        <ion-row style="border: 2px solid darkblue;margin: 5px;">
+         
+          <ion-col>
+          <ion-item >
+            <ion-label>Type opération</ion-label>
+            <ion-select placeholder="Selectionnez un">
+              <ion-select-option value="f">Sénégal</ion-select-option>
+              <ion-select-option value="m">Mali</ion-select-option>
+              <ion-select-option value="f">Cote d\'ivoire</ion-select-option>
+              <ion-select-option value="m">Togo</ion-select-option>
+              <ion-select-option value="f">Benin</ion-select-option>
+            </ion-select>         
+         </ion-item>
+        </ion-col>
+        </ion-row>
+        <ion-row style="border: 2px solid #2c5aa3;margin: 5px;">
+          <ion-col>
+            <ion-item >
+              <ion-label>Type value</ion-label>
+           </ion-item>
+           <ion-row>
+                <ion-col >
+                  <ion-item >
+                    <ion-label>Position mitrale </ion-label>
+                  </ion-item>
+                </ion-col>
+                  <ion-col style="margin: 0;padding: 0;margin-left: -1rem;">
+                  <ion-item style="margin-top: 5px;" >
+                    <form>
+                      <label (click)="checkEtude('oui')" style="margin-left: 5px !important;" class="radio-inline">
+                        <input type="radio"   value="oui" name="optradio" >OUI
+                      </label>
+                      <label (click)="checkEtude('oui')" style="margin-left: 5px !important;" class="radio-inline">
+                        <input type="radio"   value="non" name="optradio">NON
+                      </label>
+                    </form>    
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                
+                  <ion-col style="margin: 0;padding: 0;margin-left: -1rem;">
+                  <ion-item style="margin-top: 5px;margin-left: 1rem;" >
+                    <form>
+                      <label (click)="checkEtude('oui')" style="margin-left: 5px !important;" class="radio-inline">
+                        <input type="radio"   value="oui" name="optradio" >Mécanique
+                      </label>
+                      <label (click)="checkEtude('oui')" style="margin-left: 5px !important;" class="radio-inline">
+                        <input type="radio"   value="non" name="optradio">Biologique
+                      </label>
+                    </form>    
+                  </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col >
+                <ion-item >
+                  <ion-label>Taille value</ion-label>
+                  <ion-select placeholder="Taille">
+                    <ion-select-option value="f">Sénégal</ion-select-option>
+                    <ion-select-option value="m">Mali</ion-select-option>
+                    <ion-select-option value="f">Cote d\'ivoire</ion-select-option>
+                    <ion-select-option value="m">Togo</ion-select-option>
+                    <ion-select-option value="f">Benin</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+                <ion-col style="margin: 0;padding: 0;margin-left: -1rem;">
+                <ion-item style="margin-top: 5px;margin-left: 1rem;" >
+                  <ion-label>Marque</ion-label>
+                  <ion-select placeholder="Marque">
+                    <ion-select-option value="f">Sénégal</ion-select-option>
+                    <ion-select-option value="m">Mali</ion-select-option>
+                    <ion-select-option value="f">Cote d\'ivoire</ion-select-option>
+                    <ion-select-option value="m">Togo</ion-select-option>
+                    <ion-select-option value="f">Benin</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="border: 2px solid #2c5aa3;margin: 5px;">
+            <ion-col>
+              
+             <ion-row>
+                  <ion-col >
+                    <ion-item >
+                      <ion-label>Position Aortique </ion-label>
+                    </ion-item>
+                  </ion-col>
+                    <ion-col style="margin: 0;padding: 0;margin-left: -1rem;">
+                    <ion-item style="margin-top: 5px;" >
+                      <form>
+                        <label (click)="checkEtude('oui')" style="margin-left: 5px !important;" class="radio-inline">
+                          <input type="radio"   value="oui" name="optradio" >OUI
+                        </label>
+                        <label (click)="checkEtude('oui')" style="margin-left: 5px !important;" class="radio-inline">
+                          <input type="radio"   value="non" name="optradio">NON
+                        </label>
+                      </form>    
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+  
+                <ion-row>
+                  
+                    <ion-col style="margin: 0;padding: 0;margin-left: -1rem;">
+                    <ion-item style="margin-top: 5px;margin-left: 1rem;" >
+                      <form>
+                        <label (click)="checkEtude('oui')" style="margin-left: 5px !important;" class="radio-inline">
+                          <input type="radio"   value="oui" name="optradio" >Mécanique
+                        </label>
+                        <label (click)="checkEtude('oui')" style="margin-left: 5px !important;" class="radio-inline">
+                          <input type="radio"   value="non" name="optradio">Biologique
+                        </label>
+                      </form>    
+                    </ion-item>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col >
+                  <ion-item >
+                    <ion-label>Taille value</ion-label>
+                    <ion-select placeholder="Taille">
+                      <ion-select-option value="f">Sénégal</ion-select-option>
+                      <ion-select-option value="m">Mali</ion-select-option>
+                      <ion-select-option value="f">Cote d\'ivoire</ion-select-option>
+                      <ion-select-option value="m">Togo</ion-select-option>
+                      <ion-select-option value="f">Benin</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-col>
+                  <ion-col style="margin: 0;padding: 0;margin-left: -1rem;">
+                  <ion-item style="margin-top: 5px;margin-left: 1rem;" >
+                    <ion-label>Marque</ion-label>
+                    <ion-select placeholder="Marque">
+                      <ion-select-option value="f">Sénégal</ion-select-option>
+                      <ion-select-option value="m">Mali</ion-select-option>
+                      <ion-select-option value="f">Cote d\'ivoire</ion-select-option>
+                      <ion-select-option value="m">Togo</ion-select-option>
+                      <ion-select-option value="f">Benin</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              </ion-col>
+            </ion-row>
+
+            <ion-row style="border: 2px solid #2c5aa3;margin: 5px;">
+              <ion-col>
+                
+               <ion-row>
+                    <ion-col >
+                      <ion-item >
+                        <ion-label>Plastés tricuspide </ion-label>
+                      </ion-item>
+                    </ion-col>
+                      <ion-col style="margin: 0;padding: 0;margin-left: -1rem;">
+                      <ion-item style="margin-top: 5px;" >
+                        <form>
+                          <label (click)="checkEtude('oui')" style="margin-left: 5px !important;" class="radio-inline">
+                            <input type="radio"   value="oui" name="optradio" >OUI
+                          </label>
+                          <label (click)="checkEtude('oui')" style="margin-left: 5px !important;" class="radio-inline">
+                            <input type="radio"   value="non" name="optradio">NON
+                          </label>
+                        </form>    
+                      </ion-item>
+                    </ion-col>
+                  </ion-row>
+    
+                <ion-row>
+                  <ion-col >
+                    <ion-item >
+                      <ion-label>Type de plastie</ion-label>
+                      <ion-select placeholder="type">
+                        <ion-select-option value="f">Sénégal</ion-select-option>
+                        <ion-select-option value="m">Mali</ion-select-option>
+                        <ion-select-option value="f">Cote d\'ivoire</ion-select-option>
+                        <ion-select-option value="m">Togo</ion-select-option>
+                        <ion-select-option value="f">Benin</ion-select-option>
+                      </ion-select>
+                    </ion-item>
+                  </ion-col>
+
+                </ion-row>
+                </ion-col>
+              </ion-row>
+        <ion-row>
+          <ion-col style="border: 2px solid #2c5aa3; margin: 5px;">
+          <ion-item >
+            <ion-label>Autre(s) ceste préciser</ion-label>
+            <ion-select placeholder="Autre(s)">
+              <ion-select-option value="f">Sénégal</ion-select-option>
+              <ion-select-option value="m">Mali</ion-select-option>
+              <ion-select-option value="f">Cote d\'ivoire</ion-select-option>
+              <ion-select-option value="m">Togo</ion-select-option>
+              <ion-select-option value="f">Benin</ion-select-option>
+            </ion-select>         
+           </ion-item>
+        </ion-col>
+         
+        </ion-row>
+
+        
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <div style="bottom: 0;position: fixed;background: whitesmoke;width: 100%;margin: 0;padding: 0;box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);">
+    <div style="width: 100%;">
+     
+      <ion-button *ngIf="etatpeInscription == 1" style="width: 48%;" size="large" (click)="retour()" color="primary">Annuler</ion-button>  
+      <ion-button *ngIf="etatpeInscription == 1" style="width: 48%;" size="large" (click)="suivant()" color="primary">Suivant</ion-button>    
+     
+      <ion-button *ngIf="etatpeInscription == 2" style="width: 48%;" size="large" (click)="precedant()" color="primary">Précédant</ion-button>  
+      <ion-button *ngIf="etatpeInscription == 2" style="width: 48%;" size="large"  color="primary">Valider</ion-button>    
+
+    
+    </div>
+  </div>
+<!--<ion-grid>
+  <ion-row style="bottom: 0;position: fixed;background: #3880ff;width: 98%;margin: 0;padding: 0;">
+    <ion-col style="border: 2px solid #3880ff; margin: 5px;">
+    <ion-item style="background-color: #3880ff !important;">
+      <ion-button size="large" color="primary">Annuler</ion-button>    
+    </ion-item>
+  </ion-col>
+    <ion-col style="border: 2px solid #3880ff; margin: 5px;">
+    <ion-item style="background-color: #3880ff !important;">
+      <ion-button size="large" [disabled]="!suivant" color="primary">Suivant</ion-button>    
+    </ion-item>
+  </ion-col>
+  </ion-row>
+</ion-grid>-->
+</ion-content>
