@@ -4,40 +4,168 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Home
+      Traitement
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<!--  <ion-card class="welcome-card" style="max-height:250px ;">
-    <img src="/assets/orange1.png"  alt=""/>
-    
-  </ion-card>
-  <ion-card class="welcome-card" >
-    <img src="/assets/free.png" style="max-height:200px ;" alt=""/>
-   
-  </ion-card>
-  <ion-card class="welcome-card">
-    <img src="/assets/expresso.jpg" style="max-height:200px ;" alt=""/>
-    
-  </ion-card>-->
-<ion-content>
-  <ion-card class="welcome-card">
-    <img src="/assets/orange1.png" style="max-height:200px ;" alt=""/>
-    <ion-card-header>
-      <ion-card-title style="text-align: center !important;">Orange seddo</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-input type="number" [(ngModel)]="numero" [ngModelOptions]="{standalone: true}" placeholder="Numéro téléphone"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="number" [(ngModel)]="montant" [ngModelOptions]="{standalone: true}" placeholder="Montant"></ion-input>
-      </ion-item>
-      <div style="text-align: center !important;margin-top: 1rem;">
-        <ion-button (click)="presentAlert()" color="success">Valider</ion-button>
-        <ion-button (click)="reinitialiser()" color="danger">Annuler</ion-button>
-      </div>
-    </ion-card-content>
-  </ion-card>
+<ion-content >
+  <ion-card class="welcome-card myCard" style="margin: 0;padding: 0;background-color: whitesmoke;"  >
+    <ion-card-header style="background-color: #FF6347;border-bottom-left-radius: 30%;">
+    <div style="text-align: center;color: white;">
+      <span>NDIAYE</span><span>Naby</span> <span>30 ans</span> <span>, M</span>
+    </div>
+    <div style="text-align: center;color: whitesmoke;">
+      <span>Traitement AVK (Auti-Vitamine K) </span> 
+   </div>
+  </ion-card-header>
+   <ion-card-content style="padding: 0px !important;">
+
+  
+  <div style="text-align: center;">
+    <ion-grid>
+      <ion-row class="rowHome">
+        <ion-col style=" margin: 5px;">
+        <ion-item style="border: 2px solid black; margin: 5px;">
+          <ion-label>Etes-vous sous AVK ?</ion-label> 
+          <form>
+            <label (click)="checkSOusAVK('oui')" style="margin-left: 5px !important;" class="radio-inline">
+              <input type="radio"   value="oui" name="optradio" >OUI
+            </label>
+            <label (click)="checkSOusAVK('non')" style="margin-left: 5px !important;" class="radio-inline">
+              <input type="radio"   value="non" name="optradio">NON
+            </label>
+          </form>      
+        </ion-item>
+      </ion-col>
+     
+    </ion-row>
+    <div *ngIf="checkAVK">
+    <ion-row class="rowHome">
+      <ion-col style=" margin: 5px;">
+      <ion-item style="border: 2px solid black; margin: 5px;">
+        <ion-label>Pouquoi ?</ion-label>     
+        <ion-select placeholder="Selectionnez un">
+          <ion-select-option value="f">FIYkz ghsdj</ion-select-option>
+          <ion-select-option value="m">useghjfugfs</ion-select-option>
+        </ion-select>            
+       </ion-item>        
+    </ion-col>
+    </ion-row>
+ 
+    <ion-row class="rowHome">
+      <ion-col style=" margin: 5px;">
+      <ion-item style="border: 2px solid black; margin: 5px;">
+        <ion-label>Pouquoi ?</ion-label>     
+        <ion-select placeholder="Selectionnez un">
+          <ion-select-option value="f">FIYkz ghsdj</ion-select-option>
+          <ion-select-option value="m">useghjfugfs</ion-select-option>
+        </ion-select>            
+        </ion-item>        
+    </ion-col>
+    </ion-row>
+    <ion-row class="rowHome">
+      <ion-col style=" margin: 5px;">
+      <ion-item style="border: 2px solid black; margin: 5px;">
+        <ion-label>Depuis quand ?</ion-label>     
+        <ion-select placeholder="Selectionnez un">
+          <ion-select-option value="f">FIYkz ghsdj</ion-select-option>
+          <ion-select-option value="m">useghjfugfs</ion-select-option>
+        </ion-select>            
+        </ion-item>        
+    </ion-col>
+    </ion-row>
+    <ion-row class="rowHome">
+      <ion-col style=" margin: 5px;">
+      <ion-item style="border: 2px solid black; margin: 5px;">
+        <ion-label>Lequel ?</ion-label>     
+        <ion-select placeholder="Selectionnez un">
+          <ion-select-option value="f">FIYkz ghsdj</ion-select-option>
+          <ion-select-option value="m">useghjfugfs</ion-select-option>
+        </ion-select>            
+        </ion-item>        
+    </ion-col>
+    </ion-row>
+    <ion-row class="rowHome">
+      <ion-col style=" margin: 5px;">
+      <ion-item style="border: 2px solid black; margin: 5px;">
+        <ion-label>A quelle dose ?</ion-label>     
+        <ion-select placeholder="Selectionnez un">
+          <ion-select-option value="f">FIYkz ghsdj</ion-select-option>
+          <ion-select-option value="m">useghjfugfs</ion-select-option>
+        </ion-select>            
+        </ion-item>        
+    </ion-col>
+    </ion-row>
+    <ion-row class="rowHome">
+      <ion-col style=" margin: 5px;">
+      <ion-item style="border: 2px solid black; margin: 5px;">
+        <ion-label>Resultat du dernier INR ?</ion-label>     
+        <ion-select placeholder="Selectionnez un">
+          <ion-select-option value="f">FIYkz ghsdj</ion-select-option>
+          <ion-select-option value="m">useghjfugfs</ion-select-option>
+        </ion-select>            
+        </ion-item>        
+    </ion-col>
+    </ion-row>
+  </div>
+
+      
+  <ion-row class="rowHome">
+    <ion-col style=" margin: 5px;">
+    <ion-item style="border: 2px solid black; margin: 5px;">
+      <ion-label>Accidant aux AVK ?</ion-label> 
+      <form>
+        <label (click)="checkAccidant('oui')" style="margin-left: 5px !important;" class="radio-inline">
+          <input type="radio"   value="oui" name="optradio" >OUI
+        </label>
+        <label (click)="checkAccidant('non')" style="margin-left: 5px !important;" class="radio-inline">
+          <input type="radio"   value="non" name="optradio">NON
+        </label>
+      </form>      
+    </ion-item>
+  </ion-col>
+ 
+</ion-row>
+<div *ngIf="Accidant">
+<ion-row class="rowHome">
+  <ion-col style=" margin: 5px;">
+  <ion-item style="border: 2px solid black; margin: 5px;">
+    <ion-label>Si oui précisez ?</ion-label>     
+    <ion-select placeholder="Selectionnez un">
+      <ion-select-option value="f">FIYkz ghsdj</ion-select-option>
+      <ion-select-option value="m">useghjfugfs</ion-select-option>
+    </ion-select>            
+   </ion-item>        
+</ion-col>
+</ion-row>
+
+<ion-row class="rowHome">
+  <ion-col style=" margin: 5px;">
+  <ion-item style="border: 2px solid black; margin: 5px;">
+    <ion-label>Qu\'avez vous fait ?</ion-label>     
+    <ion-select placeholder="Selectionnez un">
+      <ion-select-option value="f">FIYkz ghsdj</ion-select-option>
+      <ion-select-option value="m">useghjfugfs</ion-select-option>
+    </ion-select>            
+    </ion-item>        
+</ion-col>
+</ion-row>
+
+
+
+
+  </div>
+      
+
+
+     
+      
+      
+     
+   </ion-grid>
+  </div>
+</ion-card-content>
+</ion-card>
+
 
 </ion-content>

@@ -102,4 +102,5 @@
     <plugin name="phonegap-plugin-local-notification" spec="^1.0.1" />
     <plugin name="phonegap-plugin-push" spec="^2.3.0" />
     <plugin name="cordova-plugin-pincheck" spec="0.0.6" />
+    <engine name="android" spec="7.0.0" />
 </widget>

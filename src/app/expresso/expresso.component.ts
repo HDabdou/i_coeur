@@ -8,44 +8,6 @@ import { ModalController, AlertController } from '@ionic/angular';
 })
 export class ExpressoComponent implements OnInit {
 
-  numero:number;
-  montant:number;
-  reinitialiser(){
-    this.numero=null;
-    this.montant=null;
-  }
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: 'Confirmer transactions',
-      //subHeader: 'Subtitle',
-      subHeader: 'Numéro : '+this.numero,
-      message: '.Montant : '+this.montant+' Fcfa',
-      buttons: [{
-        text: 'Annuler',
-        role: 'cancel',
-        cssClass: 'danger',
-        handler: () => {
-          console.log('Confirm Cancel');
-        }
-      }, {
-        text: 'Valider',
-        cssClass: 'success',
-        handler: () => {
-          this.valider()
-          console.log('Confirm Ok');
-        }
-      }]
-    });
-
-    await alert.present();
-  }
-  valider(){
-    console.log(this.numero+" "+this.montant); 
-  }
-  constructor(public alertController: AlertController,private modalController:ModalController) { 
-    
-  }
-
   ngOnInit() {}
 
 

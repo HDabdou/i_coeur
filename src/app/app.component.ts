@@ -17,25 +17,16 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'Orange',
+      title: 'Traitement AVK',
       url: '/orange',
-      icon: 'phone-portrait'
+      icon: 'analytics'
     },
     {
-      title: 'free',
-      url: '/free',
-      icon: 'phone-portrait'
+      title: 'Déconnexion',
+      url: '/login',
+      icon: 'exit'
     },
-    {
-      title: 'Expresso',
-      url: '/expresso',
-      icon: 'phone-portrait'
-    },
-    {
-      title: 'Reporting',
-      url: '/Reporting',
-      icon: 'list'
-    }
+
   ];
 
   constructor(
